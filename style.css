@@ -1,0 +1,73 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    margin-right: 33vw;
+    display: grid;
+    grid-template-columns: 0.12fr 0.88fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+        "name portrait"
+        "contact prof-summary"
+        "education work-exp"
+        "skills work-exp";
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+#name {
+    grid-area: name-start / name-start / name-end / portrait-end;
+    position: relative;
+    z-index: 1;
+    font-size: 60px;
+}
+
+#name,
+.section-heading {
+    font-family: 'Syncopate', sans-serif;
+}
+
+#name,
+section {
+    padding: 24px;
+}
+
+#portrait {
+    grid-area: portrait;
+    padding-right: 24px;
+    height: 350px;
+    width: 300px;
+    justify-self: end;
+    object-fit: cover;
+}
+
+#contact {
+    grid-area: contact;
+}
+
+#prof-summary {
+    grid-area: prof-summary;
+}
+
+#education {
+    grid-area: education;
+}
+
+#work-exp {
+    grid-area: work-exp;
+}
+
+#skills {
+    grid-area: skills;
+}
+
+#grey-bg {
+    grid-area: 1 / 1 / 5 / 1;
+    background: #F0F0F0;
+}
+
+hr {
+    width: 70px;
+    margin-left: 0;
+}
