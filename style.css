@@ -1,26 +1,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
-}
-
-main {
-    margin-right: 33vw;
-    display: grid;
-    grid-template-columns: 0.12fr 0.88fr;
-    grid-template-rows: repeat(4, auto);
-    grid-template-areas:
-        "name portrait"
-        "contact prof-summary"
-        "education work-exp"
-        "skills work-exp";
-    row-gap: 20px;
-    column-gap: 20px;
-}
-
-#name {
-    grid-area: name-start / name-start / name-end / portrait-end;
-    position: relative;
-    z-index: 1;
-    font-size: 60px;
+    font-size: 8px;
+    background: #F0F0F0;
 }
 
 #name,
@@ -28,46 +9,127 @@ main {
     font-family: 'Syncopate', sans-serif;
 }
 
-#name,
-section {
-    padding: 24px;
-}
-
 #portrait {
-    grid-area: portrait;
-    padding-right: 24px;
-    height: 350px;
-    width: 300px;
-    justify-self: end;
-    object-fit: cover;
-}
-
-#contact {
-    grid-area: contact;
-}
-
-#prof-summary {
-    grid-area: prof-summary;
-}
-
-#education {
-    grid-area: education;
-}
-
-#work-exp {
-    grid-area: work-exp;
-}
-
-#skills {
-    grid-area: skills;
-}
-
-#grey-bg {
-    grid-area: 1 / 1 / 5 / 1;
-    background: #F0F0F0;
+    display: none;
 }
 
 hr {
     width: 70px;
     margin-left: 0;
+}
+
+@media (min-width: 319px) {
+
+    main {
+        display: block;
+        font-size: 12px;
+        border: solid 1px black;
+        padding: 24px;
+        text-align: center;
+    }
+
+    .section-heading {
+        margin-bottom: 4px;
+    }
+
+    hr {
+        margin: auto;
+    }
+
+    ul {
+        display: inline-block;
+        text-align: left;
+    }
+
+    #name {
+        font-size: 24px;
+    }
+
+    #portrait {
+        display: block;
+        margin: auto;
+        height: 200px;
+    }
+
+    #contact {
+        grid-area: contact;
+    }
+
+    #prof-summary {
+        grid-area: prof-summary;
+    }
+
+    #education {
+        grid-area: education;
+    }
+
+    #work-exp {
+        grid-area: work-exp;
+    }
+
+    #skills {
+        grid-area: skills;
+    }
+
+    #grey-bg {
+        grid-area: 1 / 1 / 5 / 1;
+        background: #F0F0F0;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        background: white;
+    }
+
+    hr {
+        margin-left: 0;
+    }
+
+    main {
+        max-width: 1060px;
+        text-align: left;
+        display: grid;
+        grid-template-columns: 0.12fr 0.88fr;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+            "name portrait"
+            "contact prof-summary"
+            "education work-exp"
+            "skills work-exp";
+        row-gap: 20px;
+        column-gap: 20px;
+    }
+
+    #name {
+        grid-area: name-start / name-start / name-end / portrait-end;
+        font-size: 3vw;
+        position: relative;
+        z-index: 1;
+    }
+
+    #name,
+    section {
+        padding: 24px;
+    }
+
+    #portrait {
+        display: block;
+        grid-area: portrait;
+        height: 350px;
+        width: 300px;
+        justify-self: end;
+        object-fit: cover;
+    }
+
+    #prof-summary {
+        max-width: 600px;
+    }
+
+}
+
+@media (min-width: 1112px) {
+    #name {
+        font-size: 33px;
+    }
 }
